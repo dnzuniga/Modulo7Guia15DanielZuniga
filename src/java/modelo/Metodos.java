@@ -16,16 +16,25 @@ import javax.json.JsonReader;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Clase que contiene los métodos que permite consumir la información contenida
+ * en http://mindicador.cl, y crear la tabla a utilizar en el elemento JTable
  *
- * @author dnzun
+ * @author Daniel Zúñiga Correa, 2017-12-21 (yyyy-mm-dd)
  */
 public class Metodos {
 
     public Metodos() {
     }
 
-    //Métodos Custom
-    public static Indicador leeIndicador(String indicador) {
+    /**
+     * Método para consumir la información contenida en la api
+     * http://mindicador.cl/api
+     *
+     * @param indicador corresponde al indicador cuyos datos se quiere consumir
+     * @return retorna un objeto clase Indicador que contiene los datos
+     * consumidos
+     */
+    public static Indicador consumirIndicador(String indicador) {
         Indicador indicadorTemp = new Indicador();
         int tamano;
         String nombre;
@@ -58,11 +67,13 @@ public class Metodos {
     }
 
     /**
-     * Método para crear la matriz de empleados a ingresar en el JTable de la
-     * vista listar
+     * Método para crear la matriz de datos corrspondientes al indicador
+     * consumido, a ingresar en el JTable de la vista listar
      *
+     * @param indicador corresponde al indicador sobre el cual se construirá la
+     * tabla
      * @return retorna un objeto DefaultTableModel que contiene una matriz de
-     * empleados
+     * datos del indicador
      */
     public static DefaultTableModel llenarTabla(Indicador indicador) {
         DefaultTableModel tablemodel = new DefaultTableModel();

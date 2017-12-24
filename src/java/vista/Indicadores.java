@@ -9,8 +9,9 @@ package vista;
 import modelo.*;
 
 /**
+ * Clase JFrame correspondiente a la vista que contiene principal del proyecto.
  *
- * @author dnzun
+ * @author Daniel Zúñiga Correa, 2017-12-21 (yyyy-mm-dd)
  */
 public class Indicadores extends javax.swing.JFrame {
 
@@ -26,12 +27,12 @@ public class Indicadores extends javax.swing.JFrame {
      */
     public Indicadores() {
         initComponents();
-        dolar = Metodos.leeIndicador("dolar");
-        utm = Metodos.leeIndicador("utm");
-        uf = Metodos.leeIndicador("uf");
-        euro = Metodos.leeIndicador("euro");
-        ipc = Metodos.leeIndicador("ipc");
-        bitcoin = Metodos.leeIndicador("bitcoin");
+        dolar = Metodos.consumirIndicador("dolar");
+        utm = Metodos.consumirIndicador("utm");
+        uf = Metodos.consumirIndicador("uf");
+        euro = Metodos.consumirIndicador("euro");
+        ipc = Metodos.consumirIndicador("ipc");
+        bitcoin = Metodos.consumirIndicador("bitcoin");
         tbIndicadores.setModel(Metodos.llenarTabla(indicadorSeleccionado()));
     }
 
@@ -102,7 +103,7 @@ public class Indicadores extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jLabel1.setText("INDICADORES");
 
-        cboIndicadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dolar", "UTM", "UF", "Euro", "IPC" }));
+        cboIndicadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dolar", "UTM", "UF", "Euro", "IPC", "BitCoin" }));
         cboIndicadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboIndicadoresActionPerformed(evt);
@@ -183,9 +184,7 @@ public class Indicadores extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-
         new Indicadores().setVisible(true);
-
 
     }
 
@@ -196,7 +195,13 @@ public class Indicadores extends javax.swing.JFrame {
     private static javax.swing.JTable tbIndicadores;
     // End of variables declaration//GEN-END:variables
 
-//Métodos Custom
+    /**
+     * Método para determinar cual objeto clase Indicador corresponde a la
+     * opción seleccionada en el combo box respectivo
+     *
+     * @return retorna el objeto clase Indicador que corresponde a la opción
+     * seleccionada en el combo box
+     */
     private Indicador indicadorSeleccionado() {
         int index = cboIndicadores.getSelectedIndex();
         Indicador indicador = new Indicador();

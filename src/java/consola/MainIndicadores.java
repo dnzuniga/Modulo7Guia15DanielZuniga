@@ -16,8 +16,8 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 
 /**
+ * Contiene la primera versión del consumo de datos desde http://mindicador.cl
  *
- * @author dnzun
  */
 public class MainIndicadores {
 

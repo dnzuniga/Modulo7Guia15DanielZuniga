@@ -7,6 +7,8 @@
 package modelo;
 
 /**
+ * Corresponde a la clase desde la cual se instancian objetos indicador que
+ * contienen como atributos los datos del indicador
  *
  * @author Daniel Zúñiga Correa, 2017-12-21 (yyyy-mm-dd)
  */
@@ -18,9 +20,11 @@ public class Indicador {
     private String[] fecha;
     private String[] valor;
 
+//    Constructor sin parámetros
     public Indicador() {
     }
 
+//    Mutadores y Accesadores
     public String[] getValor() {
         return valor;
     }
