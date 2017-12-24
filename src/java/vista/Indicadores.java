@@ -14,7 +14,8 @@ import modelo.*;
  * @author Daniel Zúñiga Correa, 2017-12-21 (yyyy-mm-dd)
  */
 public class Indicadores extends javax.swing.JFrame {
-
+//    Declaración de variables de clase para su utilización en los métodos contenidos
+//    en esta vista.
     public Indicador dolar;
     public Indicador utm;
     public Indicador uf;
@@ -23,7 +24,7 @@ public class Indicadores extends javax.swing.JFrame {
     public Indicador bitcoin;
 
     /**
-     * Creates new form Indicadores
+     * Método para inicializar la vista
      */
     public Indicadores() {
         initComponents();

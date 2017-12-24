@@ -37,8 +37,6 @@ public class Metodos {
     public static Indicador consumirIndicador(String indicador) {
         Indicador indicadorTemp = new Indicador();
         int tamano;
-        String nombre;
-        String unidadMedida;
         String[] fechaTemp = new String[31];
         String[] valorTemp = new String[31];
         try {
